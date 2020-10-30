@@ -24,9 +24,14 @@
 
         socket.emit('mensaje', {nombre:'client'});
         
-        socket.on('mensaje', function(payload) {
+        socket.on('nuevo-mensaje', function(payload) {
             console.log('Escuchando:', payload);
-        })
+        });
+
+        socket.on('active-series', function(series){
+            console.clear;
+            console.table(series);
+        });
 
 
     </script>
